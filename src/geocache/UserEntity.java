@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "user", schema = "geocache", catalog = "")
+@Table(name = "user", schema = "geocache")
 public class UserEntity {
     private int id;
     private String pseudo;

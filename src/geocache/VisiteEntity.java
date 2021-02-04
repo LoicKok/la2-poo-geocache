@@ -5,7 +5,7 @@ import java.sql.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "visite", schema = "geocache", catalog = "")
+@Table(name = "visite", schema = "geocache")
 public class VisiteEntity {
     private int id;
     private Date dateVisite;

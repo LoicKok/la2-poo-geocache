@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "cache", schema = "geocache", catalog = "")
+@Table(name = "cache", schema = "geocache")
 public class CacheEntity {
     private int id;
     private String description;
