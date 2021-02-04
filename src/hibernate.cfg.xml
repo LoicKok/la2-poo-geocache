@@ -11,9 +11,9 @@
   <property name="show_sql">false</property>
   <property name="format_sql">true</property>
   <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-  <mapping class="geocache.cache"/>
-  <mapping class="geocache.lieu"/>
-  <mapping class="geocache.user"/>
-  <mapping class="geocache.visite"/>
+  <mapping class="geocache.CacheEntity"/>
+  <mapping class="geocache.LieuEntity"/>
+  <mapping class="geocache.UserEntity"/>
+  <mapping class="geocache.VisiteEntity"/>
   </session-factory>
 </hibernate-configuration>

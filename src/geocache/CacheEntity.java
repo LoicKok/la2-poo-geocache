@@ -1,6 +1,7 @@
 package geocache;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -68,6 +69,19 @@ public class CacheEntity {
     public String getCoordGps() {
         return coordGps;
     }
+
+
+    @OneToOne
+    @JoinColumn(name="lieu")
+    private LieuEntity lieu;
+
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "proprietaire")
+    private UserEntity proprietaire;
+
+    @OneToMany(mappedBy = "cache")
+    private List<VisiteEntity> visiteList;
+
 
     public void setCoordGps(String coordGps) {
         this.coordGps = coordGps;

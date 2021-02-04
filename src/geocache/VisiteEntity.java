@@ -52,6 +52,14 @@ public class VisiteEntity {
         this.commentaire = commentaire;
     }
 
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "cache")
+    private CacheEntity cache;
+
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "visiteur")
+    private UserEntity visiteur;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

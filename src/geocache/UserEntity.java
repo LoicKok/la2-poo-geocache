@@ -1,6 +1,7 @@
 package geocache;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -50,6 +51,12 @@ public class UserEntity {
     public void setPhoto(String photo) {
         this.photo = photo;
     }
+
+    @OneToMany(mappedBy = "proprietaire")
+    private List<CacheEntity> cacheList;
+
+    @OneToMany(mappedBy = "visiteur")
+    private List<VisiteEntity> visiteList;
 
     @Override
     public boolean equals(Object o) {
