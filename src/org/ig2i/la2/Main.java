@@ -1,10 +1,9 @@
 package org.ig2i.la2;
 
 import geocache.UserEntity;
+import modele.UserDao;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
-import javax.persistence.EntityManager;
 
 public class Main {
 
@@ -21,5 +20,7 @@ public class Main {
     
     public static void main(String[] args) {
 
+        UserEntity u1 = new UserEntity();
+        UserDao.getInstance().read(1);
     }
 }
