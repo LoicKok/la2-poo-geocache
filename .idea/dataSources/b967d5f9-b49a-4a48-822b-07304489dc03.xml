@@ -751,5 +751,173 @@ SELECT|sys.sys_config
       <ObjectGrants>ALL PRIVILEGES!
 </ObjectGrants>
     </user>
+    <table id="233" parent="2" name="cache">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="234" parent="2" name="lieu">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="235" parent="2" name="user">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="236" parent="2" name="visite">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="237" parent="233" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="238" parent="233" name="lieu">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="239" parent="233" name="proprietaire">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="240" parent="233" name="description">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="241" parent="233" name="typeCache">
+      <Position>5</Position>
+      <DataType>char(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;T&apos;</DefaultExpression>
+    </column>
+    <column id="242" parent="233" name="natureCache">
+      <Position>6</Position>
+      <DataType>char(1)|0s</DataType>
+      <DefaultExpression>&apos;P&apos;</DefaultExpression>
+    </column>
+    <column id="243" parent="233" name="etat">
+      <Position>7</Position>
+      <DataType>char(1)|0s</DataType>
+      <DefaultExpression>&apos;A&apos;</DefaultExpression>
+    </column>
+    <column id="244" parent="233" name="coordGPS">
+      <Position>8</Position>
+      <DataType>varchar(64)|0s</DataType>
+    </column>
+    <index id="245" parent="233" name="cache_lieu_id_fk">
+      <ColNames>lieu</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="246" parent="233" name="cache_user_id_fk">
+      <ColNames>proprietaire</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="247" parent="233" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="248" parent="233" name="cache_lieu_id_fk">
+      <ColNames>lieu</ColNames>
+      <RefTableName>lieu</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="249" parent="233" name="cache_user_id_fk">
+      <ColNames>proprietaire</ColNames>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="250" parent="234" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="251" parent="234" name="nom">
+      <Position>2</Position>
+      <DataType>varchar(64)|0s</DataType>
+    </column>
+    <column id="252" parent="234" name="ville">
+      <Position>3</Position>
+      <DataType>varchar(128)|0s</DataType>
+    </column>
+    <column id="253" parent="234" name="codep">
+      <Position>4</Position>
+      <DataType>varchar(6)|0s</DataType>
+    </column>
+    <key id="254" parent="234" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="255" parent="235" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="256" parent="235" name="pseudo">
+      <Position>2</Position>
+      <DataType>varchar(25)|0s</DataType>
+    </column>
+    <column id="257" parent="235" name="description">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="258" parent="235" name="photo">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <key id="259" parent="235" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="260" parent="236" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="261" parent="236" name="cache">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="262" parent="236" name="visiteur">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="263" parent="236" name="dateVisite">
+      <Position>4</Position>
+      <DataType>date|0s</DataType>
+    </column>
+    <column id="264" parent="236" name="photoVisite">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="265" parent="236" name="commentaire">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <index id="266" parent="236" name="visite_cache_id_fk">
+      <ColNames>cache</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="267" parent="236" name="visite_user_id_fk">
+      <ColNames>visiteur</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="268" parent="236" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="269" parent="236" name="visite_cache_id_fk">
+      <ColNames>cache</ColNames>
+      <RefTableName>cache</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="270" parent="236" name="visite_user_id_fk">
+      <ColNames>visiteur</ColNames>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

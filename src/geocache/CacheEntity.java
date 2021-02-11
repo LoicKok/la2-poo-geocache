@@ -4,15 +4,24 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
+
 @Entity
 @Table(name = "cache", schema = "geocache")
+
+@NamedQuery(name="listVisiteFiltre", query="SELECT c FROM CacheEntity c WHERE c.proprietaire = :proprietaire")
+
 public class CacheEntity {
+
     private int id;
     private String description;
     private String typeCache;
     private String natureCache;
     private String etat;
     private String coordGps;
+    private LieuEntity lieu;
+    private UserEntity proprietaire;
+    private List<VisiteEntity> visiteList;
+
 
     @Id
     @Column(name = "id")
@@ -24,7 +33,6 @@ public class CacheEntity {
         this.id = id;
     }
 
-    @Basic
     @Column(name = "description")
     public String getDescription() {
         return description;
@@ -34,7 +42,6 @@ public class CacheEntity {
         this.description = description;
     }
 
-    @Basic
     @Column(name = "typeCache")
     public String getTypeCache() {
         return typeCache;
@@ -44,7 +51,6 @@ public class CacheEntity {
         this.typeCache = typeCache;
     }
 
-    @Basic
     @Column(name = "natureCache")
     public String getNatureCache() {
         return natureCache;
@@ -54,7 +60,6 @@ public class CacheEntity {
         this.natureCache = natureCache;
     }
 
-    @Basic
     @Column(name = "etat")
     public String getEtat() {
         return etat;
@@ -64,27 +69,43 @@ public class CacheEntity {
         this.etat = etat;
     }
 
-    @Basic
     @Column(name = "coordGPS")
     public String getCoordGps() {
         return coordGps;
     }
 
-
-    @OneToOne
-    @JoinColumn(name="lieu")
-    private LieuEntity lieu;
-
-    @ManyToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "proprietaire")
-    private UserEntity proprietaire;
-
-    @OneToMany(mappedBy = "cache")
-    private List<VisiteEntity> visiteList;
-
-
     public void setCoordGps(String coordGps) {
         this.coordGps = coordGps;
+    }
+
+    @JoinColumn(name = "lieu")
+    @ManyToOne(cascade = CascadeType.DETACH)
+    public LieuEntity getLieu() {
+        return lieu;
+    }
+
+    public void setLieu(LieuEntity lieu) {
+        System.out.println(lieu);
+        this.lieu = lieu;
+    }
+
+    @JoinColumn(name = "proprietaire")
+    @ManyToOne(cascade = CascadeType.DETACH)
+    public UserEntity getProprietaire() {
+        return proprietaire;
+    }
+
+    public void setProprietaire(UserEntity proprietaire) {
+        this.proprietaire = proprietaire;
+    }
+
+    @OneToMany(mappedBy = "cache", cascade = CascadeType.ALL)
+    public List<VisiteEntity> getVisiteList() {
+        return visiteList;
+    }
+
+    public void setVisiteList(List<VisiteEntity> visiteList) {
+        this.visiteList = visiteList;
     }
 
     @Override
@@ -109,6 +130,8 @@ public class CacheEntity {
                 ", natureCache='" + natureCache + '\'' +
                 ", etat='" + etat + '\'' +
                 ", coordGps='" + coordGps + '\'' +
+                ", lieu=" + lieu.toString() +
+                ", proprietaire=" + proprietaire.toString() +
                 '}';
     }
 }

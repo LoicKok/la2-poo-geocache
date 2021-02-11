@@ -11,6 +11,9 @@ public class VisiteEntity {
     private Date dateVisite;
     private String photoVisite;
     private String commentaire;
+    private CacheEntity cache;
+    private UserEntity visiteur;
+
 
     @Id
     @Column(name = "id")
@@ -52,13 +55,25 @@ public class VisiteEntity {
         this.commentaire = commentaire;
     }
 
-    @ManyToOne(cascade = CascadeType.DETACH)
+    @ManyToOne
     @JoinColumn(name = "cache")
-    private CacheEntity cache;
+    public CacheEntity getCache() {
+        return cache;
+    }
+
+    public void setCache(CacheEntity cache) {
+        this.cache = cache;
+    }
 
     @ManyToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "visiteur")
-    private UserEntity visiteur;
+    public UserEntity getVisiteur() {
+        return visiteur;
+    }
+
+    public void setVisiteur(UserEntity visiteur) {
+        this.visiteur = visiteur;
+    }
 
     @Override
     public boolean equals(Object o) {

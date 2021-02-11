@@ -27,7 +27,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         UserDao u1 = UserDao.getInstance();
         u1.openSession();
         UserEntity user = u1.read(1);
@@ -37,7 +36,6 @@ public class Main {
         l1.openSession();
         LieuEntity lieu = l1.read(1);
         System.out.println(lieu.toString());
-
 
         CacheDao c1 = CacheDao.getInstance();
         c1.openSession();

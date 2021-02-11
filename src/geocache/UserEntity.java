@@ -11,6 +11,8 @@ public class UserEntity {
     private String pseudo;
     private String description;
     private String photo;
+    private List<CacheEntity> cacheList;
+    private List<VisiteEntity> visiteList;
 
     @Id
     @Column(name = "id")
@@ -53,10 +55,22 @@ public class UserEntity {
     }
 
     @OneToMany(mappedBy = "proprietaire")
-    private List<CacheEntity> cacheList;
+    public List<CacheEntity> getCacheList() {
+        return cacheList;
+    }
+
+    public void setCacheList(List<CacheEntity> cacheList) {
+        this.cacheList = cacheList;
+    }
 
     @OneToMany(mappedBy = "visiteur")
-    private List<VisiteEntity> visiteList;
+    public List<VisiteEntity> getVisiteList() {
+        return visiteList;
+    }
+
+    public void setVisiteList(List<VisiteEntity> visiteList) {
+        this.visiteList = visiteList;
+    }
 
     @Override
     public boolean equals(Object o) {

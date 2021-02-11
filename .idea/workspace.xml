@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa0f7efd-ea32-4a8f-90ab-d687a9535617" name="Default Changelist" comment="gitigignore">
-      <change afterPath="$PROJECT_DIR$/.idea/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modele/DAOInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modele/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/Instance.java" afterDir="false" />
+    <list default="true" id="fa0f7efd-ea32-4a8f-90ab-d687a9535617" name="Default Changelist" comment="[WIP] DAO">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/b967d5f9-b49a-4a48-822b-07304489dc03.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b967d5f9-b49a-4a48-822b-07304489dc03.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/geocache.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/geocache.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Hibernate_5_4_11_5_4_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Hibernate_5_4_11_5_4_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_8_0_23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_8_0_23.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_02_2021_11_09__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_02_2021_11_09__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_02_2021_11_24__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_02_2021_11_24__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/geocache/geocache/CacheEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/geocache/geocache/CacheEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/geocache/geocache/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/geocache/geocache/UserEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/geocache/geocache/VisiteEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/geocache/geocache/VisiteEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/geocache/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/geocache/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geocache/CacheEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geocache/CacheEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geocache/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geocache/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geocache/VisiteEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geocache/VisiteEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/CacheDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/CacheDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/ig2i/la2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ig2i/la2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/PersistanceUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/JpaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/JpaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/JpaDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,10 +123,10 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.40574712" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="ImportMappingsDialog.RecentPackages">
@@ -178,7 +176,7 @@
       <workItem from="1612434327360" duration="67000" />
       <workItem from="1612434407447" duration="1195000" />
       <workItem from="1612978575560" duration="557000" />
-      <workItem from="1613027847705" duration="7353000" />
+      <workItem from="1613027847705" duration="18761000" />
     </task>
     <task id="LOCAL-00001" summary="persitance utils + libs">
       <created>1612433754977</created>
@@ -201,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612435631358</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[WIP] DAO">
+      <created>1613036786727</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1613036786727</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +227,21 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="persitance utils + libs" />
     <MESSAGE value="gitigignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitigignore" />
+    <MESSAGE value="[WIP] DAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="[WIP] DAO" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="geocache.CacheEntity" memberName="visiteList" />
+        <PinnedItemInfo parentTag="geocache.CacheEntity" memberName="lieu" />
+        <PinnedItemInfo parentTag="geocache.CacheEntity" memberName="proprietaire" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="cache.visiteList" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

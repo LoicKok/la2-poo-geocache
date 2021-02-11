@@ -52,7 +52,7 @@ private Class<T> entityClass;
             em.getTransaction().begin();
             em.remove(obj);
             em.getTransaction().commit();
-            System.out.println("Entity " + obj.getClass().getName() + " persisted successfully");
+            System.out.println("Entity " + obj.getClass().getName() + " deleted successfully");
         } catch (HibernateException e) {
             e.printStackTrace();
         }
