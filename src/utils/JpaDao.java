@@ -2,15 +2,38 @@ package utils;
 
 import modele.DAOInterface;
 import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
-public abstract class JpaDao<U> implements DAOInterface {
+public abstract class JpaDao<T> implements DAOInterface {
+private SessionFactory ourSessionFactory;
+private Session session;
+protected EntityManager em;
+private Class<T> entityClass;
 
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("JaimeLaPOO");
-    EntityManager em = emf.createEntityManager();
+
+
+    public JpaDao(Class<T> entityClass){
+        try {
+            this.entityClass = entityClass;
+            Configuration configuration = new Configuration();
+            configuration.configure("hibernate.cfg.xml");
+
+            ourSessionFactory = configuration.buildSessionFactory();
+        } catch (Throwable ex) {
+            System.out.println(ex);
+            throw new ExceptionInInitializerError(ex);
+        }
+    }
+
+    public void openSession(){
+        session = ourSessionFactory.openSession();
+        em = session.getEntityManagerFactory().createEntityManager();
+    }
+
 
     public void create(Object obj) {
         try {
@@ -45,8 +68,8 @@ public abstract class JpaDao<U> implements DAOInterface {
             e.printStackTrace();
         }
     }
-    public Object read(Integer id) {
-        return em.find(Object.class, id);
+    public T read(Integer id) {
+        return em.find(this.entityClass, id);
     }
 
 }

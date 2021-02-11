@@ -59,8 +59,20 @@ public class LieuEntity {
         return id == that.id && Objects.equals(nom, that.nom) && Objects.equals(ville, that.ville) && Objects.equals(codep, that.codep);
     }
 
+
+
     @Override
     public int hashCode() {
         return Objects.hash(id, nom, ville, codep);
+    }
+
+    @Override
+    public String toString() {
+        return "LieuEntity{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", ville='" + ville + '\'' +
+                ", codep='" + codep + '\'' +
+                '}';
     }
 }

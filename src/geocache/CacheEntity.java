@@ -99,4 +99,16 @@ public class CacheEntity {
     public int hashCode() {
         return Objects.hash(id, description, typeCache, natureCache, etat, coordGps);
     }
+
+    @Override
+    public String toString() {
+        return "CacheEntity{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", typeCache='" + typeCache + '\'' +
+                ", natureCache='" + natureCache + '\'' +
+                ", etat='" + etat + '\'' +
+                ", coordGps='" + coordGps + '\'' +
+                '}';
+    }
 }

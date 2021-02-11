@@ -7,6 +7,10 @@ public class UserDao extends JpaDao<UserEntity> implements DAOInterface{
 
     private static UserDao instance;
 
+    public UserDao() {
+        super(UserEntity.class);
+    }
+
     public static UserDao getInstance(){
         if(instance == null) {
             instance = new UserDao();
@@ -14,23 +18,6 @@ public class UserDao extends JpaDao<UserEntity> implements DAOInterface{
         return instance;
     }
 
-    @Override
-    public void create(Object user) {
-        super.create(user);
-    }
 
-    @Override
-    public UserEntity read(Integer id) {
-        return super.read(id);
-    }
 
-    @Override
-    public void update(Object user) {
-        super.update(user);
-    }
-
-    @Override
-    public void delete(Object user) {
-        super.delete(user);
-    }
 }

@@ -67,6 +67,16 @@ public class UserEntity {
     }
 
     @Override
+    public String toString() {
+        return "UserEntity{" +
+                "id=" + id +
+                ", pseudo='" + pseudo + '\'' +
+                ", description='" + description + '\'' +
+                ", photo='" + photo + '\'' +
+                '}';
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(id, pseudo, description, photo);
     }

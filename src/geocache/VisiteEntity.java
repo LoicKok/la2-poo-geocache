@@ -72,4 +72,14 @@ public class VisiteEntity {
     public int hashCode() {
         return Objects.hash(id, dateVisite, photoVisite, commentaire);
     }
+
+    @Override
+    public String toString() {
+        return "VisiteEntity{" +
+                "id=" + id +
+                ", dateVisite=" + dateVisite +
+                ", photoVisite='" + photoVisite + '\'' +
+                ", commentaire='" + commentaire + '\'' +
+                '}';
+    }
 }
