@@ -14,6 +14,13 @@ public class UserEntity {
     private List<CacheEntity> cacheList;
     private List<VisiteEntity> visiteList;
 
+    public UserEntity(int id) {
+        this.id = id;
+    }
+
+    public UserEntity() {
+    }
+
     @Id
     @Column(name = "id")
     public int getId() {

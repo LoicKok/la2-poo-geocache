@@ -11,6 +11,9 @@ public class LieuEntity {
     private String ville;
     private String codep;
 
+    public LieuEntity() {
+    }
+
     @Id
     @Column(name = "id")
     public int getId() {

@@ -18,6 +18,4 @@ public class UserDao extends JpaDao<UserEntity> implements DAOInterface{
         return instance;
     }
 
-
-
 }

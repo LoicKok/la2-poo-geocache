@@ -4,6 +4,8 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.util.Objects;
 
+@NamedQuery(name="listVisiteByUser", query="SELECT v FROM VisiteEntity v WHERE v.visiteur = :user")
+
 @Entity
 @Table(name = "visite", schema = "geocache")
 public class VisiteEntity {
@@ -14,6 +16,8 @@ public class VisiteEntity {
     private CacheEntity cache;
     private UserEntity visiteur;
 
+    public VisiteEntity() {
+    }
 
     @Id
     @Column(name = "id")

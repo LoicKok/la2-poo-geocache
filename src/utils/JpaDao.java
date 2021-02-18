@@ -15,7 +15,6 @@ protected EntityManager em;
 private Class<T> entityClass;
 
 
-
     public JpaDao(Class<T> entityClass){
         try {
             this.entityClass = entityClass;
@@ -63,11 +62,12 @@ private Class<T> entityClass;
             em.getTransaction().begin();
             em.merge(obj);
             em.getTransaction().commit();
-            System.out.println("Success");
+            System.out.println("Entity " + obj.getClass().getName() + " updated successfully");
         } catch (HibernateException e) {
             e.printStackTrace();
         }
     }
+
     public T read(Integer id) {
         return em.find(this.entityClass, id);
     }

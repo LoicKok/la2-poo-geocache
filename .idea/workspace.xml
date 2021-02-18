@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa0f7efd-ea32-4a8f-90ab-d687a9535617" name="Default Changelist" comment="[WIP] DAO">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b967d5f9-b49a-4a48-822b-07304489dc03.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b967d5f9-b49a-4a48-822b-07304489dc03.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" beforeDir="false" />
+    <list default="true" id="fa0f7efd-ea32-4a8f-90ab-d687a9535617" name="Default Changelist" comment="[WIP] ListFiltrées">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_02_2021_11_09_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_02_2021_11_09__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_02_2021_11_24_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_02_2021_11_24__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/geocache/geocache/CacheEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/geocache/geocache/CacheEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/geocache/geocache/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/geocache/geocache/UserEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/geocache/geocache/VisiteEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/geocache/geocache/VisiteEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/geocache/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/geocache/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/geocache/org/ig2i/la2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/geocache/org/ig2i/la2/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geocache/CacheEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geocache/CacheEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geocache/LieuEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geocache/LieuEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geocache/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geocache/UserEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geocache/VisiteEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geocache/VisiteEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modele/CacheDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/CacheDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/VisiteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/VisiteDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/ig2i/la2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ig2i/la2/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/JpaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/JpaDao.java" afterDir="false" />
     </list>
@@ -176,7 +179,9 @@
       <workItem from="1612434327360" duration="67000" />
       <workItem from="1612434407447" duration="1195000" />
       <workItem from="1612978575560" duration="557000" />
-      <workItem from="1613027847705" duration="18761000" />
+      <workItem from="1613027847705" duration="24221000" />
+      <workItem from="1613121945025" duration="3423000" />
+      <workItem from="1613674442153" duration="3193000" />
     </task>
     <task id="LOCAL-00001" summary="persitance utils + libs">
       <created>1612433754977</created>
@@ -206,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613036786727</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="[WIP] ListFiltrées">
+      <created>1613060150654</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1613060150654</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +240,8 @@
     <MESSAGE value="persitance utils + libs" />
     <MESSAGE value="gitigignore" />
     <MESSAGE value="[WIP] DAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="[WIP] DAO" />
+    <MESSAGE value="[WIP] ListFiltrées" />
+    <option name="LAST_COMMIT_MESSAGE" value="[WIP] ListFiltrées" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -240,7 +253,10 @@
     </pin-to-top-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="cache.visiteList" />
+        <watch expression="cache.visiteList" language="JAVA" />
+        <watch expression="l1" />
+        <watch expression="((java.util.ArrayList)listVisite).get(0)" custom="java.util.ArrayList" />
+        <watch expression="lieu" />
       </configuration>
     </watches-manager>
   </component>

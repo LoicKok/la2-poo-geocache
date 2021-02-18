@@ -1,6 +1,7 @@
 package modele;
 
 import geocache.CacheEntity;
+import geocache.LieuEntity;
 import geocache.UserEntity;
 
 import utils.JpaDao;
@@ -25,13 +26,19 @@ public class CacheDao extends JpaDao<CacheEntity> implements DAOInterface{
         return instance;
     }
 
-    public static List getListFiltre(UserEntity user){
-        Query query = instance.em.createNamedQuery("listVisiteFiltre",CacheEntity.class);
+    public static List<CacheEntity> getAllCacheByUser(UserEntity user){
+        Query query = instance.em.createNamedQuery("listCacheFiltre",CacheEntity.class);
         query.setParameter("proprietaire", user);
 
         return query.getResultList();
     }
 
+    public static List<CacheEntity> getALLCacheByPlace(LieuEntity lieu){
+        Query query = instance.em.createNamedQuery("listCacheFromPlace",CacheEntity.class);
+        query.setParameter("lieu", lieu);
+
+        return query.getResultList();
+    }
 
 
 }

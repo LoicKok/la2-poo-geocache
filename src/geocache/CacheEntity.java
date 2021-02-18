@@ -8,7 +8,8 @@ import java.util.Objects;
 @Entity
 @Table(name = "cache", schema = "geocache")
 
-@NamedQuery(name="listVisiteFiltre", query="SELECT c FROM CacheEntity c WHERE c.proprietaire = :proprietaire")
+@NamedQuery(name="listCacheFiltre", query="SELECT c FROM CacheEntity c WHERE c.proprietaire = :proprietaire")
+@NamedQuery(name="listCacheFromPlace", query="SELECT c FROM CacheEntity c WHERE c.lieu = :lieu")
 
 public class CacheEntity {
 
@@ -22,6 +23,8 @@ public class CacheEntity {
     private UserEntity proprietaire;
     private List<VisiteEntity> visiteList;
 
+    public CacheEntity() {
+    }
 
     @Id
     @Column(name = "id")
